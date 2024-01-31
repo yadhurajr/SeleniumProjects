@@ -2,6 +2,8 @@ package TestScripts;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import Pages.LogInPage;
@@ -10,11 +12,11 @@ import Utilities.ExcelUtility;
 public class LogInTest extends Base {
 	
 	@Test(description = "Verify that the user is able to login with correct username and correct password")
-	public void verifyThatTheUserIsAbleToLoginWithCorrectUsernameAndCorrectPassword() {
+	public void verifyThatTheUserIsAbleToLoginWithCorrectUsernameAndCorrectPassword() throws IOException {
 		
-		String username = ExcelUtility.getString(1, 0, "LogIn");
-		String password = "admin";
-		
+		String username = ExcelUtility.getString(0, 1, "LogIn");
+		String password = ExcelUtility.getString(1, 1, "LogIn");
+				
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
 		loginpage.enterPasswordOnPasswordInputField(password);
@@ -25,8 +27,8 @@ public class LogInTest extends Base {
 	
 	@Test
 	public void verifyThatTheUserIsNOTAbleToLoginWithCorrectUsernameAndIncorrectPassword() {
-		String username = "admin";
-		String password = "incorrectPassword";
+		String username = ExcelUtility.getString(0, 1, "LogIn");
+		String password = ExcelUtility.getString(4, 1, "LogIn");
 		
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
@@ -39,8 +41,8 @@ public class LogInTest extends Base {
 	
 	@Test
 	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndCorrectPassword() {
-		String username = "incorrectUsername";
-		String password = "admin";
+		String username = ExcelUtility.getString(3, 1, "LogIn");
+		String password = ExcelUtility.getString(1, 1, "LogIn");
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
 		loginpage.enterPasswordOnPasswordInputField(password);
@@ -51,8 +53,8 @@ public class LogInTest extends Base {
 	
 	@Test
 	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndIncorrectPassword() {
-		String username = "incorrectUsername";
-		String password = "incorrectPassword";
+		String username = ExcelUtility.getString(4, 1, "LogIn");
+		String password = ExcelUtility.getString(3, 1, "LogIn");
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
 		loginpage.enterPasswordOnPasswordInputField(password);
