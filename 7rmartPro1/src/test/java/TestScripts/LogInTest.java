@@ -14,8 +14,8 @@ public class LogInTest extends Base {
 	@Test(description = "Verify that the user is able to login with correct username and correct password")
 	public void verifyThatTheUserIsAbleToLoginWithCorrectUsernameAndCorrectPassword() throws IOException {
 		
-		String username = ExcelUtility.getString(0, 1, "LogIn");
-		String password = ExcelUtility.getString(1, 1, "LogIn");
+		String username = ExcelUtility.getStringData(0, 1, "LogIn");
+		String password = ExcelUtility.getStringData(1, 1, "LogIn");
 				
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
@@ -26,9 +26,9 @@ public class LogInTest extends Base {
 	}
 	
 	@Test
-	public void verifyThatTheUserIsNOTAbleToLoginWithCorrectUsernameAndIncorrectPassword() {
-		String username = ExcelUtility.getString(0, 1, "LogIn");
-		String password = ExcelUtility.getString(4, 1, "LogIn");
+	public void verifyThatTheUserIsNOTAbleToLoginWithCorrectUsernameAndIncorrectPassword() throws IOException {
+		String username = ExcelUtility.getStringData(0, 1, "LogIn");
+		String password = ExcelUtility.getStringData(4, 1, "LogIn");
 		
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
@@ -40,9 +40,9 @@ public class LogInTest extends Base {
 	}
 	
 	@Test
-	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndCorrectPassword() {
-		String username = ExcelUtility.getString(3, 1, "LogIn");
-		String password = ExcelUtility.getString(1, 1, "LogIn");
+	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndCorrectPassword() throws IOException {
+		String username = ExcelUtility.getStringData(3, 1, "LogIn");
+		String password = ExcelUtility.getStringData(1, 1, "LogIn");
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
 		loginpage.enterPasswordOnPasswordInputField(password);
@@ -52,9 +52,9 @@ public class LogInTest extends Base {
 	}
 	
 	@Test
-	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndIncorrectPassword() {
-		String username = ExcelUtility.getString(4, 1, "LogIn");
-		String password = ExcelUtility.getString(3, 1, "LogIn");
+	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndIncorrectPassword() throws IOException {
+		String username = ExcelUtility.getStringData(4, 1, "LogIn");
+		String password = ExcelUtility.getStringData(3, 1, "LogIn");
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
 		loginpage.enterPasswordOnPasswordInputField(password);

@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import Utilities.FileUploadUtility;
 import Utilities.GeneralUtility;
+import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class ManageOfferCodePage {
 	
@@ -59,7 +61,13 @@ public class ManageOfferCodePage {
 		}
 		
 		public void clickOnSaveButton() {
-			saveButton.click();
+//			saveButton.click();
+			
+			PageUtilities pageutilities = new PageUtilities();
+			pageutilities.javaScriptClick(driver, saveButton);
+			
+			WaitUtility waitUtility = new WaitUtility();
+			waitUtility.ExplicitWaitForAnElement(driver, saveButton);
 		}
 		
 		public boolean issuccessfullAlertPopupDisplayed() {

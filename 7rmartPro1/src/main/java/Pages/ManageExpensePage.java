@@ -26,7 +26,7 @@ public class ManageExpensePage {
 		@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/expense']") WebElement moreInfoLink;
 		@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
 		@FindBy(xpath = "//select[@name='user_id']") WebElement userIdSelectField;
-		@FindBy(xpath = "//input[@id='ex_date']") WebElement dateInputField;
+//		@FindBy(xpath = "//input[@id='ex_date']") WebElement dateInputField;
 		@FindBy(xpath = "//select[@name='ex_cat']") WebElement categorySelectField;
 		@FindBy(xpath = "//select[@name='order_id']") WebElement orderIdSelectField;
 		@FindBy(xpath = "//select[@name='purchase_id']") WebElement purchaseIdSelectField;
@@ -50,9 +50,9 @@ public class ManageExpensePage {
 			pageutilities.selectValueUsingSelectByVisibleText(userIdSelectField, visibleTextOfUserId);
 		}
 		
-		public void enterDateInDateInputField(String date) {
-			dateInputField.sendKeys(date);
-		}
+//		public void enterDateInDateInputField(String date) {
+//			dateInputField.sendKeys(date);
+//		}
 		
 		public void selectCategory(String visibleTextOfCategory) {
 			pageutilities = new PageUtilities();
@@ -83,18 +83,22 @@ public class ManageExpensePage {
 		}
 		
 		public void uploadFile() {
-			//String filepath = "C:\\Users\\HP\\Documents\\Lion.jpg";
 			FileUploadUtility fileuploadutility = new FileUploadUtility();
 			fileuploadutility.fileUploadUsingSendKeys(driver, chooseFileButton, GeneralUtility.LION_JPGFILE);
 		}
 		
 		public void clickOnSaveButton() {
-			saveButton.click();
+//			saveButton.click();
+			
+			PageUtilities pageutilities = new PageUtilities();
+			pageutilities.javaScriptClick(driver, saveButton);
+			
+			WaitUtility waitUtility = new WaitUtility();
+			waitUtility.ExplicitWaitForAnElement(driver, saveButton);
 		}
 		
 		public boolean issuccessfullAlertPopupDisplayed() {
-			WaitUtility waitUtility = new WaitUtility();
-			waitUtility.ExplicitWaitForAnElement(driver, successfullAlertPopup);
+			
 			return successfullAlertPopup.isDisplayed();
 		}
 		

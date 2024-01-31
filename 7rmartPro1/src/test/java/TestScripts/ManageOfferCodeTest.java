@@ -2,24 +2,27 @@ package TestScripts;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import Pages.LogInPage;
 import Pages.ManageOfferCodePage;
 import Pages.MenuPage;
+import Utilities.ExcelUtility;
 
 public class ManageOfferCodeTest extends Base {
 	
 	@Test(description = "Verify that user is able to add offer code by uploading image in manage offer code link")
-	public void verifyThatUserIsAbleToAddOfferCodeInManageOfferCodeMoreInfoLink() {
+	public void verifyThatUserIsAbleToAddOfferCodeInManageOfferCodeMoreInfoLink() throws IOException {
 		
-		String username = "admin";
-		String password = "admin";
-		String selectedMenu = "Manage Offer Code";
-		String offerCode = "X100RIZZ";
-		String percentage = "30%";
-		String amount = "500";
-		String description = "New Year Offer";
+		String username = ExcelUtility.getStringData(0, 1, "ManageOfferCodeTest");
+		String password = ExcelUtility.getStringData(1, 1, "ManageOfferCodeTest");
+		String selectedMenu = ExcelUtility.getStringData(2, 1, "ManageOfferCodeTest");
+		String offerCode = ExcelUtility.getStringData(3, 1, "ManageOfferCodeTest");
+		String percentage = ExcelUtility.getIntegerData(4, 1, "ManageOfferCodeTest");
+		String amount = ExcelUtility.getIntegerData(5, 1, "ManageOfferCodeTest");
+		String description = ExcelUtility.getStringData(6, 1, "ManageOfferCodeTest");
 		
 		
 		LogInPage loginpage = new LogInPage(driver);
