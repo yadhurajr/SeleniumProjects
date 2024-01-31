@@ -9,6 +9,13 @@
 				<include name="verifyThatTheUserIsNOTAbleToLoginWithCorrectUsernameAndIncorrectPassword"></include>
 			</methods>
 	  </class>
+
+	  <class name="TestScripts.ManageLocationsTest">
+			<methods>
+				<include name="verifyThatTheUserIsAbleToAddLocationInManageLocationMoreInfoLink"></include>
+			</methods>
+	  </class>
+
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
