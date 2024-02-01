@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Pages.LogInPage;
@@ -51,10 +52,9 @@ public class LogInTest extends Base {
 		assertTrue(isRedAlertTextBoxDisplayed, "User is able to login with invalid credentials");
 	}
 	
-	@Test
-	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndIncorrectPassword() throws IOException {
-		String username = ExcelUtility.getStringData(4, 1, "LogIn");
-		String password = ExcelUtility.getStringData(3, 1, "LogIn");
+	@Test(dataProvider ="LoginProvider")
+	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndIncorrectPassword(String username, String password) throws IOException {
+
 		LogInPage loginpage = new LogInPage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
 		loginpage.enterPasswordOnPasswordInputField(password);
@@ -62,5 +62,12 @@ public class LogInTest extends Base {
 		boolean isRedAlertTextBoxDisplayed = loginpage.isRedAlertTextBoxDisplayed();
 		assertTrue(isRedAlertTextBoxDisplayed, "User is able to login with invalid credentials");
 	}
+	
+	@DataProvider(name = "LoginProvider")
+	public Object[][] getDataFromTestData() throws IOException {
+		return new Object[][] { { ExcelUtility.getStringData(4, 1, "LogIn"), ExcelUtility.getStringData(3, 1, "LogIn") },
 
+		};
+
+}
 }
