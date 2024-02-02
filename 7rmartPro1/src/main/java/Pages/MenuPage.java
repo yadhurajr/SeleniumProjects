@@ -7,9 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Utilities.PageUtilities;
+
 public class MenuPage {
 	
 public WebDriver driver;
+public PageUtilities pageutilities;
 	
 	public MenuPage(WebDriver driver) {
 		this.driver = driver;
@@ -24,7 +27,8 @@ public WebDriver driver;
 		for (WebElement menuItem : menuList) {
 			menuIndex = menuList.indexOf(menuItem);
 			if(menuIndex!=-1 && menuItem.getText().contains(selectedMenu)) {
-				menuLink.get(menuIndex).click();	
+				pageutilities = new PageUtilities();
+				pageutilities.javaScriptClick(driver, menuLink.get(menuIndex));
 				break;
 			}
 		}

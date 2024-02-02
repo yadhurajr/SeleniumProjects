@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import Pages.LogInPage;
 import Pages.ManageExpensePage;
+import Pages.MenuPage;
 import Utilities.ExcelUtility;
 
 public class ManageExpenseTest extends Base {
@@ -16,9 +17,8 @@ public class ManageExpenseTest extends Base {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageExpenseTest");
 		String password = ExcelUtility.getStringData(1, 1, "ManageExpenseTest");
-		//String selectedMenu = ExcelUtility.getStringData(2, 1, "ManageExpenseTest");
+		String selectedMenu = ExcelUtility.getStringData(2, 1, "ManageExpenseTest");
 		String visibleTextOfUserId = ExcelUtility.getStringData(3, 1, "ManageExpenseTest");
-//		String date = ExcelUtility.getStringData(4, 1, "ManageExpenseTest");
 		String visibleTextOfCategory = ExcelUtility.getStringData(5, 1, "ManageExpenseTest");
 		String visibleTextOfOrderId = ExcelUtility.getIntegerData(6, 1, "ManageExpenseTest");
 		String visibleTextOfPurchaseId = ExcelUtility.getIntegerData(7, 1, "ManageExpenseTest");
@@ -27,16 +27,14 @@ public class ManageExpenseTest extends Base {
 		String remarks = ExcelUtility.getStringData(10, 1, "ManageExpenseTest");
 		
 		LogInPage loginpage = new LogInPage(driver);
-		//MenuPage menupage = new MenuPage(driver);
+		MenuPage menupage = new MenuPage(driver);
 		ManageExpensePage manageexpensepage = new ManageExpensePage(driver);
 		loginpage.enterUsernameOnUsernameInputField(username);
 		loginpage.enterPasswordOnPasswordInputField(password);
 		loginpage.clickOnSignInButton();
-		//menupage.clickOnMenu(selectedMenu);
-		manageexpensepage.clickOnMoreInfoLink();
+		menupage.clickOnMenu(selectedMenu);
 		manageexpensepage.clickOnNewButton();
 		manageexpensepage.selectUserId(visibleTextOfUserId);
-//		manageexpensepage.enterDateInDateInputField(date);
 		manageexpensepage.selectCategory(visibleTextOfCategory);
 		manageexpensepage.selectOrderId(visibleTextOfOrderId);
 		manageexpensepage.selectPurchaseId(visibleTextOfPurchaseId);

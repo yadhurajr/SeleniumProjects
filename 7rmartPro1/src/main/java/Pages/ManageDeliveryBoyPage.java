@@ -9,6 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Utilities.PageUtilities;
+import Utilities.WaitUtility;
+
 public class ManageDeliveryBoyPage {
 	
 	public WebDriver driver;
@@ -18,7 +21,7 @@ public class ManageDeliveryBoyPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-//	@FindBy(xpath = "//li[@class='nav-item']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy']") WebElement manageDeliveryBoyMoreInfoLink;
+	//TestCase2
 	@FindBy(xpath = "//a[@href='javascript:void(0)']") WebElement blueSearchButtonLink;
 	@FindBy(xpath = "//input[@id='un']") WebElement nameInputField;
 	@FindBy(xpath = "//input[@id='ph']") WebElement phoneNumberInputField;
@@ -26,9 +29,16 @@ public class ManageDeliveryBoyPage {
 	@FindBy(xpath = "//button[@name='Search']") WebElement redSearchButtonLink;
 	@FindBy(xpath = "//tbody/tr[1]") WebElement secondRowOflistDeliveryBoyTable;
 	
-//	public void clickOnManageDeliveryBoyMoreInfoLink() {
-//		manageDeliveryBoyMoreInfoLink.click();
-//	}
+	//TestCase1
+	@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
+	@FindBy(xpath = "//input[@id='name']") WebElement nameInputField2;
+	@FindBy(xpath = "//input[@id='email']") WebElement emailInputField2;
+	@FindBy(xpath = "//input[@id='phone']") WebElement phoneNumberInputField2;
+	@FindBy(xpath = "//textarea[@id='address']") WebElement addressInputField2;
+	@FindBy(xpath = "//input[@id='username']") WebElement usernameInputField2;
+	@FindBy(xpath = "//input[@id='password']") WebElement passwordInputField2;
+	@FindBy(xpath = "//button[@type='submit']") WebElement saveButton;
+	@FindBy(xpath = "//tbody/tr[1]") WebElement secondRowOflistDeliveryBoyTableAfterAddingDeliveryBoyInstructions;
 	
 	public void clickOnBlueSearchButtonLink() {
 		blueSearchButtonLink.click();
@@ -61,5 +71,49 @@ public class ManageDeliveryBoyPage {
     return details;
 
     }
+    
+    public void clickOnNewButton() {
+    	newButton.click();
+    }
+    
+    public void enterNameOnNameInputFieldToAddNewDeliveryBoyInformations(String nameToAdd) {
+    	nameInputField2.sendKeys(nameToAdd);
+    }
+    
+    public void enterEmailOnEmailInputFieldToAddNewDeliveryBoyInformations(String emailToAdd) {
+    	emailInputField2.sendKeys(emailToAdd);
+    }
+    
+    public void enterPhnNoOnPhnNoInputFieldToAddNewDeliveryBoyInformations(String phnNoToAdd) {
+    	phoneNumberInputField2.sendKeys(phnNoToAdd);
+    }
+    
+    public void enterAddressOnAddressInputFieldToAddNewDeliveryBoyInformations(String addressToAdd) {
+    	addressInputField2.sendKeys(addressToAdd);
+    }
+    
+    public void enterUsernameOnUsernameInputFieldToAddNewDeliveryBoyInformations(String usernameToAdd) {
+    	usernameInputField2.sendKeys(usernameToAdd);
+    }
+    
+    public void enterPasswordOnPasswordInputFieldToAddNewDeliveryBoyInformations(String passwordToAdd) {
+    	passwordInputField2.sendKeys(passwordToAdd);
+    }
+    
+    public void clickOnSaveButton() {
+    	PageUtilities pageutilities = new PageUtilities();
+		pageutilities.javaScriptClick(driver, saveButton);
+    }
+    
+    public List<String> getDetailsOfSecondRowAfterAddingDeliveryBoyInstructions() {
+    	List<String> details = new ArrayList<String>();
+        List<WebElement> cellsOfSecondRow = secondRowOflistDeliveryBoyTableAfterAddingDeliveryBoyInstructions.findElements(By.tagName("td"));
 
+        for (WebElement cell : cellsOfSecondRow) {
+            details.add(cell.getText());
+        }
+
+    return details;
+
+    }    
 }

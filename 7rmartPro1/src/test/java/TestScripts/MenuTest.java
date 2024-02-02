@@ -21,7 +21,6 @@ public class MenuTest extends Base {
 		loginpage.clickOnSignInButton();
 		
 		MenuPage menupage = new MenuPage(driver);
-//		System.out.println(selectedMenu);
 		menupage.clickOnMenu(selectedMenu);
 	}
 
