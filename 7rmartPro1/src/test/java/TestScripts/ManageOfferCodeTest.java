@@ -32,8 +32,8 @@ public class ManageOfferCodeTest extends Base {
 		String selectedMenu = ExcelUtility.getStringData(2, 1, "ManageOfferCodeTest");
 		offerCode1 = RandomUtility.getRandomOfferCode();
 		percentage1 = ExcelUtility.getIntegerData(3, 1, "ManageOfferCodeTest");
-		amount1 = ExcelUtility.getIntegerData(5, 1, "ManageOfferCodeTest");
-		String description = ExcelUtility.getStringData(6, 1, "ManageOfferCodeTest");
+		amount1 = ExcelUtility.getIntegerData(4, 1, "ManageOfferCodeTest");
+		String description = ExcelUtility.getStringData(5, 1, "ManageOfferCodeTest");
 		
 		
 		LogInPage loginpage = new LogInPage(driver);
@@ -92,8 +92,8 @@ public class ManageOfferCodeTest extends Base {
 		String selectedMenu = ExcelUtility.getStringData(2, 1, "ManageOfferCodeTest");
 		offerCode2 = RandomUtility.getRandomOfferCode();
 		percentage2 = ExcelUtility.getIntegerData(3, 1, "ManageOfferCodeTest");
-		amount2 = ExcelUtility.getIntegerData(5, 1, "ManageOfferCodeTest");
-		String description = ExcelUtility.getStringData(6, 1, "ManageOfferCodeTest");
+		amount2 = ExcelUtility.getIntegerData(4, 1, "ManageOfferCodeTest");
+		String description = ExcelUtility.getStringData(5, 1, "ManageOfferCodeTest");
 		
 		
 		LogInPage loginpage = new LogInPage(driver);
