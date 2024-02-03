@@ -44,8 +44,10 @@ public class RandomUtility {
 		return faker.address().fullAddress();
 	}
 	
-	
-	
-	
-	
+	public static String getRandomOfferCode() {
+		Faker faker = new Faker();
+		String couponCode = faker.bothify("?###???"); 
+		couponCode = couponCode.toUpperCase();
+        return couponCode;
+	}	
 }

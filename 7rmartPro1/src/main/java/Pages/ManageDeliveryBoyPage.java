@@ -106,14 +106,14 @@ public class ManageDeliveryBoyPage {
     }
     
     public List<String> getDetailsOfSecondRowAfterAddingDeliveryBoyInstructions() {
-    	List<String> details = new ArrayList<String>();
+    	List<String> actualDetails = new ArrayList<String>();
         List<WebElement> cellsOfSecondRow = secondRowOflistDeliveryBoyTableAfterAddingDeliveryBoyInstructions.findElements(By.tagName("td"));
 
         for (WebElement cell : cellsOfSecondRow) {
-            details.add(cell.getText());
+        	actualDetails.add(cell.getText());
         }
 
-    return details;
+    return actualDetails;
 
     }    
 }

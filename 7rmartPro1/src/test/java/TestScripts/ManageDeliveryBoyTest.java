@@ -18,12 +18,12 @@ public class ManageDeliveryBoyTest extends Base {
     private String emailToAdd;
     private String phnNoToAdd;
 	
-	@Test(description = "Verify that user is able to add delivery boy informations")
+	@Test(description = "Verify that user is able to add delivery boy informations", priority = 1)
 	public void verifyThatUserIsAbleToAddDeliveryBoyInformations() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoyTest");
 		String password = ExcelUtility.getStringData(1, 1, "ManageDeliveryBoyTest");
-		String selectedMenu = ExcelUtility.getStringData(5, 1, "ManageDeliveryBoyTest");
+		String selectedMenu = ExcelUtility.getStringData(2, 1, "ManageDeliveryBoyTest");
 		
 		nameToAdd = RandomUtility.getRandomFullName();
 		emailToAdd = RandomUtility.getRandomFirstName() + "@gmail.com";
@@ -57,8 +57,8 @@ public class ManageDeliveryBoyTest extends Base {
 		
 	}
 	
-	@Test(description = "Verify that user is able to get the details of delivery boy by searching using email and phone number")
-	public void verifyThatUserIsAbleToGetTheDetailsOfDeliveryBoyBySearchingUsingEmailPhoneNoAndEmail() throws IOException {
+	@Test(description = "Verify that user is able to get the details of delivery boy by searching using name, email and phone number", priority = 2)
+	public void verifyThatUserIsAbleToGetTheDetailsOfDeliveryBoyBySearchingUsingNameEmailAndPhoneNo() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoyTest");
 		String password = ExcelUtility.getStringData(1, 1, "ManageDeliveryBoyTest");
@@ -67,7 +67,7 @@ public class ManageDeliveryBoyTest extends Base {
         String expectedEmail = emailToAdd;
         String expectedPhoneNumber = phnNoToAdd;
 		
-		String selectedMenu = ExcelUtility.getStringData(5, 1, "ManageDeliveryBoyTest");
+		String selectedMenu = ExcelUtility.getStringData(2, 1, "ManageDeliveryBoyTest");
 		
 		LogInPage loginpage = new LogInPage(driver);
 		ManageDeliveryBoyPage managedeliveryboypage = new ManageDeliveryBoyPage(driver);

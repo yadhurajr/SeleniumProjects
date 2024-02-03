@@ -1,5 +1,9 @@
 package Pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,13 +26,21 @@ public class ManageOfferCodePage {
 		
 		@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
 		@FindBy(xpath = "//input[@id='offer_code']") WebElement offerCodeInputField;
-		@FindBy(xpath = "//input[@value='yes']") WebElement firstOfferCodeRadioButton;
+		
+		@FindBy(xpath = "//input[@value='yes']") WebElement firstOrderUserYesRadioButton;
+		@FindBy(xpath = "//input[@value='no']") WebElement firstOrderUserNoRadioButton;
+		
 		@FindBy(xpath = "//input[@id='offer_per']") WebElement percentageInputField;
 		@FindBy(xpath = "//input[@id='offer_price']") WebElement amountInputField;
 		@FindBy(xpath = "//div[@role='textbox']") WebElement descriptionInputField;
 		@FindBy(xpath = "//input[@id='main_img']") WebElement chooseFileButton;
 		@FindBy(xpath = "//button[@type='submit']") WebElement saveButton;
 		@FindBy(xpath = "//div[@class='col-sm-12']") WebElement successfullAlertPopup;
+		
+		@FindBy(xpath = "//a[@onclick='click_button(2)']") WebElement blueSearchButton;
+		@FindBy(xpath = "//input[@placeholder='Offer Code']") WebElement offerCodeInputfieldToSearch;
+		@FindBy(xpath = "//button[@type='submit']") WebElement redSearchButton;
+		@FindBy(xpath = "//tbody/tr[1]") WebElement secondRowOfListOfferCodeTable;
 		
 		public void clickOnNewButton() {
 			newButton.click();
@@ -38,8 +50,11 @@ public class ManageOfferCodePage {
 			offerCodeInputField.sendKeys(offerCode);
 		}
 		
-		public void clickOnFirstCodeUserRadioButton() {
-			firstOfferCodeRadioButton.click();
+		public void clickOnFirstOrderUserYesRadioButton() {
+			firstOrderUserYesRadioButton.click();
+		}
+		public void clickOnFirstOrderUserNoRadioButton() {
+			firstOrderUserNoRadioButton.click();
 		}
 		
 		public void enterPercentageOnPercentageField(String percentage) {
@@ -55,13 +70,11 @@ public class ManageOfferCodePage {
 		}
 		
 		public void uploadImage() {
-			//String filepath = "C:\\Users\\HP\\Documents\\30Percent.jpg";
 			FileUploadUtility fileuploadutility = new FileUploadUtility();
 			fileuploadutility.fileUploadUsingSendKeys(driver, chooseFileButton, GeneralUtility.COUPONCODE_JPGFILE);
 		}
 		
 		public void clickOnSaveButton() {
-//			saveButton.click();
 			
 			PageUtilities pageutilities = new PageUtilities();
 			pageutilities.javaScriptClick(driver, saveButton);
@@ -73,6 +86,30 @@ public class ManageOfferCodePage {
 		public boolean issuccessfullAlertPopupDisplayed() {
 			return successfullAlertPopup.isDisplayed();
 		}
+		
+		public void clickOnBlueSearchButton() {
+			blueSearchButton.click();
+		}
+		
+		public void enterOfferCodeOnOfferCodeInputfieldToSearch(String expectedOfferCode) {
+			offerCodeInputfieldToSearch.sendKeys(expectedOfferCode);
+		}
+		
+		public void clickOnRedSearchButton() {
+			redSearchButton.click();
+		}
+		
+		public List<String> getDetailsOfSecondRow() {
+	    	List<String> actualDetails = new ArrayList<String>();
+	        List<WebElement> cellsOfSecondRow = secondRowOfListOfferCodeTable.findElements(By.tagName("td"));
+
+	        for (WebElement cell : cellsOfSecondRow) {
+	        	actualDetails.add(cell.getText());
+	        }
+
+	    return actualDetails;
+
+	    }
 
 }
 
