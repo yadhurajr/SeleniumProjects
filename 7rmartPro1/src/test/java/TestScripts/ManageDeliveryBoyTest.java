@@ -89,6 +89,3 @@ public class ManageDeliveryBoyTest extends Base {
 	}
 
 }
-
-//TC1
-//TC2

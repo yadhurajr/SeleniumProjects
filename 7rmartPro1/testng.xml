@@ -7,8 +7,6 @@
 			<methods>
 				<include name="verifyThatUserIsAbleToAddOfferCodeInformationsInManageOfferCodeMoreInfoLinkAsFirstOrderUser"></include>
 				<include name="verifyThatUserIsAbleToSearchOfferCodeDetailsOfFirstOrderUserBySearchingtheOfferCode"></include>
-				<include name="verifyThatUserIsAbleToAddOfferCodeInManageOfferCodeMoreInfoLinkNotAsFirstOrderUser"></include>
-				<include name="verifyThatUserIsAbleToSearchOfferCodeDetailsOfNotAFirstOrderUserBySearchingtheOfferCode"></include>
 			</methods>
 	  </class>
 

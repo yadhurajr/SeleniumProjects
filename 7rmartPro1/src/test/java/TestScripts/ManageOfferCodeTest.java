@@ -145,8 +145,3 @@ public class ManageOfferCodeTest extends Base {
 	}
 
 }
-
-//TC1
-//TC2
-//TC3
-//TC4
