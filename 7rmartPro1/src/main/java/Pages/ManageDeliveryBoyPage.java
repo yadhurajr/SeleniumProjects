@@ -21,7 +21,6 @@ public class ManageDeliveryBoyPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	//TestCase2
 	@FindBy(xpath = "//a[@href='javascript:void(0)']") WebElement blueSearchButtonLink;
 	@FindBy(xpath = "//input[@id='un']") WebElement nameInputField;
 	@FindBy(xpath = "//input[@id='ph']") WebElement phoneNumberInputField;
@@ -29,7 +28,6 @@ public class ManageDeliveryBoyPage {
 	@FindBy(xpath = "//button[@name='Search']") WebElement redSearchButtonLink;
 	@FindBy(xpath = "//tbody/tr[1]") WebElement secondRowOflistDeliveryBoyTable;
 	
-	//TestCase1
 	@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
 	@FindBy(xpath = "//input[@id='name']") WebElement nameInputField2;
 	@FindBy(xpath = "//input[@id='email']") WebElement emailInputField2;

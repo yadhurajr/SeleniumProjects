@@ -29,7 +29,6 @@ public FileUploadUtility fileuploadutility;
 	}
 	
 	public void uploadImage() {
-		//String filepath = "C:\\Users\\HP\\Documents\\Lion.jpg";
 		FileUploadUtility fileuploadutility = new FileUploadUtility();
 		fileuploadutility.fileUploadUsingSendKeys(driver, chooseFileButton, GeneralUtility.LION_JPGFILE);
 	}

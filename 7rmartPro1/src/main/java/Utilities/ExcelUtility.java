@@ -13,29 +13,6 @@ public class ExcelUtility {
 	public static XSSFWorkbook wb;
 	public static XSSFSheet sh;
 	public static FileInputStream f;
-	
-//	public static String getString(int i, int j, String sheet) {
-//		
-//		String file_path = GeneralUtility.TESTDATAFILE;
-//		try {
-//			f = new FileInputStream(file_path);
-//		} catch (FileNotFoundException e) {
-//
-//			e.printStackTrace();
-//		}
-//		try {
-//			wb = new XSSFWorkbook(f);
-//		} catch (IOException e) {
-//
-//			e.printStackTrace();
-//		}
-//		sh = wb.getSheet(sheet);
-//		Row r = sh.getRow(i);
-//		Cell c = r.getCell(j);
-//		return c.getStringCellValue();
-//	}
-//
-//}
 
 public static String getStringData(int a, int b, String sheet) throws IOException {
 		
