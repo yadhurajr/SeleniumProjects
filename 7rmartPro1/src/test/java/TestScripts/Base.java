@@ -1,12 +1,17 @@
 package TestScripts;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+
+import Utilities.ScreenshotUtility;
 
 public class Base {
 	
@@ -39,7 +44,11 @@ public WebDriver driver;
 	}
 	
 	@AfterMethod
-	public void driverQuit() {
+	public void driverQuit(ITestResult iTestResult) throws IOException {
+		if(iTestResult.getStatus() == ITestResult.FAILURE) {
+			ScreenshotUtility screenshotutility = new ScreenshotUtility();
+			screenshotutility.getScreenShot(driver, iTestResult.getName());
+		}
 		driver.quit(); 
 	}
 

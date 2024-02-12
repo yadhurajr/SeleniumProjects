@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import Pages.LogInPage;
 import Pages.ManageDeliveryBoyPage;
 import Pages.MenuPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
 import Utilities.RandomUtility;
 
@@ -18,7 +19,7 @@ public class ManageDeliveryBoyTest extends Base {
     private String emailToAdd;
     private String phnNoToAdd;
 	
-	@Test(description = "Verify that user is able to add delivery boy informations", priority = 1)
+	@Test(retryAnalyzer = Retry.class, description = "Verify that user is able to add delivery boy informations", priority = 1)
 	public void verifyThatUserIsAbleToAddDeliveryBoyInformations() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoyTest");
