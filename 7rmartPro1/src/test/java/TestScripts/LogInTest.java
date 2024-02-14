@@ -8,11 +8,12 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Pages.LogInPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
 
 public class LogInTest extends Base {
 	
-	@Test(description = "Verify that the user is able to login with correct username and correct password")
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is able to login with correct username and correct password", groups = {"Regression"})
 	public void verifyThatTheUserIsAbleToLoginWithCorrectUsernameAndCorrectPassword() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "LogIn");
@@ -26,7 +27,7 @@ public class LogInTest extends Base {
 		assertTrue(isAdminDropdownDisplayed, "User is unable to login with valid credentials");
 	}
 	
-	@Test
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is not able to login with correct username and incorrect password", groups = {"Regression"})
 	public void verifyThatTheUserIsNOTAbleToLoginWithCorrectUsernameAndIncorrectPassword() throws IOException {
 		String username = ExcelUtility.getStringData(0, 1, "LogIn");
 		String password = ExcelUtility.getStringData(4, 1, "LogIn");
@@ -40,7 +41,7 @@ public class LogInTest extends Base {
 		
 	}
 	
-	@Test
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is not able to login with incorrect username and correct password")
 	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndCorrectPassword() throws IOException {
 		String username = ExcelUtility.getStringData(3, 1, "LogIn");
 		String password = ExcelUtility.getStringData(1, 1, "LogIn");
@@ -52,7 +53,7 @@ public class LogInTest extends Base {
 		assertTrue(isRedAlertTextBoxDisplayed, "User is able to login with invalid credentials");
 	}
 	
-	@Test(dataProvider ="LoginProvider")
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is not able to login with incorrect username and correct password", dataProvider ="LoginProvider")
 	public void verifyThatTheUserIsNOTAbleToLoginWithIncorrectUsernameAndIncorrectPassword(String username, String password) throws IOException {
 
 		LogInPage loginpage = new LogInPage(driver);

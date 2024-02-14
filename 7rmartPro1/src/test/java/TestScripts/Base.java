@@ -1,6 +1,7 @@
 package TestScripts;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import Utilities.ScreenshotUtility;
+import Utilities.WaitUtility;
 
 public class Base {
 	
@@ -22,7 +24,7 @@ public WebDriver driver;
 
 
 
-	@BeforeMethod
+	@BeforeMethod (alwaysRun = true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception {
 		
@@ -40,10 +42,11 @@ public WebDriver driver;
 		}
 		
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 		driver.manage().window().maximize();
 	}
 	
-	@AfterMethod
+	@AfterMethod (alwaysRun = true)
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 		if(iTestResult.getStatus() == ITestResult.FAILURE) {
 			ScreenshotUtility screenshotutility = new ScreenshotUtility();

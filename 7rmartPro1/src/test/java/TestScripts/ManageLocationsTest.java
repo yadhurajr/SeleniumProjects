@@ -9,11 +9,12 @@ import org.testng.annotations.Test;
 import Pages.LogInPage;
 import Pages.ManageLocationsPage;
 import Pages.MenuPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
 
 public class ManageLocationsTest extends Base {
 	
-	@Test(description = "Verify that the User is able to add Location details in Manage Location More Info Link")
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the User is able to add Location details in Manage Location More Info Link")
 	public void verifyThatTheUserIsAbleToAddLocationInManageLocationMoreInfoLink() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageLocationsTest");

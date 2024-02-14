@@ -9,11 +9,12 @@ import org.testng.annotations.Test;
 import Pages.LogInPage;
 import Pages.ManageSliderPage;
 import Pages.MenuPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
 
 public class ManageSliderTest extends Base {
 	
-	@Test(description = "Verify that the user is able to upload image in Manage Slider Link")
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is able to upload image in Manage Slider Link")
 	public void verifyThatUserIsAbleToUploadImageInManageSliderLink() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageSliderTest");

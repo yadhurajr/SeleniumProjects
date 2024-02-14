@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import Pages.LogInPage;
 import Pages.ManageOfferCodePage;
 import Pages.MenuPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
 import Utilities.RandomUtility;
 
@@ -24,7 +25,7 @@ public class ManageOfferCodeTest extends Base {
 	private String percentage2;
 	private String amount2;
 	
-	@Test(description = "Verify that user is able to add offer code informations by uploading image in manage offer code link as First Order User", priority = 1)
+	@Test(retryAnalyzer = Retry.class, description = "Verify that user is able to add offer code informations by uploading image in manage offer code link as First Order User", priority = 1, groups = {"Smoke"})
 	public void verifyThatUserIsAbleToAddOfferCodeInformationsInManageOfferCodeMoreInfoLinkAsFirstOrderUser() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageOfferCodeTest");
@@ -55,7 +56,7 @@ public class ManageOfferCodeTest extends Base {
 		assertTrue(isSuccessfullAlertPopupDisplayed, "User is not able to add offer code by uploading image in manage offer code link");	
 	}
 	
-	@Test(description = "Verify that user is able to search offer code details of First Order User by searching offer code", priority = 2)
+	@Test(retryAnalyzer = Retry.class, description = "Verify that user is able to search offer code details of First Order User by searching offer code", priority = 2, groups = {"Smoke"})
 	public void verifyThatUserIsAbleToSearchOfferCodeDetailsOfFirstOrderUserBySearchingtheOfferCode() throws IOException {
 		String username = ExcelUtility.getStringData(0, 1, "ManageOfferCodeTest");
 		String password = ExcelUtility.getStringData(1, 1, "ManageOfferCodeTest");
@@ -84,7 +85,7 @@ public class ManageOfferCodeTest extends Base {
 				
 	}
 	
-	@Test(description = "Verify that user is able to add offer code informations by uploading image in manage offer code link NOT as First Order User", priority = 3)
+	@Test(retryAnalyzer = Retry.class, description = "Verify that user is able to add offer code informations by uploading image in manage offer code link NOT as First Order User", priority = 3)
 	public void verifyThatUserIsAbleToAddOfferCodeInManageOfferCodeMoreInfoLinkNotAsFirstOrderUser() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageOfferCodeTest");
@@ -115,7 +116,7 @@ public class ManageOfferCodeTest extends Base {
 		assertTrue(isSuccessfullAlertPopupDisplayed, "User is not able to add offer code by uploading image in manage offer code link");	
 	}
 	
-	@Test(description = "Verify that user is able to search offer code details of not a First Order User by searching offer code", priority = 4)
+	@Test(retryAnalyzer = Retry.class, description = "Verify that user is able to search offer code details of not a First Order User by searching offer code", priority = 4)
 	public void verifyThatUserIsAbleToSearchOfferCodeDetailsOfNotAFirstOrderUserBySearchingtheOfferCode() throws IOException {
 		String username = ExcelUtility.getStringData(0, 1, "ManageOfferCodeTest");
 		String password = ExcelUtility.getStringData(1, 1, "ManageOfferCodeTest");

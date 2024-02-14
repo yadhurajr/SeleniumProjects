@@ -58,7 +58,7 @@ public class ManageDeliveryBoyTest extends Base {
 		
 	}
 	
-	@Test(description = "Verify that user is able to get the details of delivery boy by searching using name, email and phone number", priority = 2)
+	@Test(retryAnalyzer = Retry.class, description = "Verify that user is able to get the details of delivery boy by searching using name, email and phone number", priority = 2)
 	public void verifyThatUserIsAbleToGetTheDetailsOfDeliveryBoyBySearchingUsingNameEmailAndPhoneNo() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoyTest");

@@ -9,11 +9,12 @@ import org.testng.annotations.Test;
 import Pages.LogInPage;
 import Pages.ManageOrdersPage;
 import Pages.MenuPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
 
 public class ManageOrdersTest extends Base {
 	
-	@Test(description = "Verify that the user is able to change delivery date or time")
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is able to change delivery date or time")
 	public void verifyThatTheUserIsAbleToChangeDeliveryDateOrTime() throws IOException {	
 
 		String username = ExcelUtility.getStringData(0, 1, "ManageOrdersTest");
@@ -41,7 +42,7 @@ public class ManageOrdersTest extends Base {
 		assertTrue(isSuccessfulAlertMessageDisplayedForChangingDeliveryDate, "User is not able to change delivery date or time to Order ID");
 	}
 	
-	@Test(description = "Verify that the user is able to assign delivery boy to Order ID")
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is able to assign delivery boy to Order ID")
 	public void verifyThatUserIsAbleToAssignDeliveryBoy() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageOrdersTest");

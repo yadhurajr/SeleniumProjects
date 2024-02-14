@@ -8,11 +8,12 @@ import org.testng.annotations.Test;
 import Pages.LogInPage;
 import Pages.ManageExpensePage;
 import Pages.MenuPage;
+import Retry.Retry;
 import Utilities.ExcelUtility;
 
 public class ManageExpenseTest extends Base {
 	
-	@Test(description = "Verify that the user is able to add expense and upload image in Manage Expense Link")
+	@Test(retryAnalyzer = Retry.class, description = "Verify that the user is able to add expense and upload image in Manage Expense Link")
 	public void verifyThatUserIsAbleToAddExpenseAndUploadImageInManageExpenseTest() throws IOException {
 		
 		String username = ExcelUtility.getStringData(0, 1, "ManageExpenseTest");

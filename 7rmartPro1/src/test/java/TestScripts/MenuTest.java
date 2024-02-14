@@ -4,10 +4,11 @@ import org.testng.annotations.Test;
 
 import Pages.LogInPage;
 import Pages.MenuPage;
+import Retry.Retry;
 
 public class MenuTest extends Base {
 	
-	@Test
+	@Test(retryAnalyzer = Retry.class, description = "verify Whether The Selected Menu Tiles Are Displayed")
 	public void verifyWhetherTheSelectedMenuTilesAreDisplayed()
 	
 	{
