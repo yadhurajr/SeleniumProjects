@@ -23,17 +23,17 @@ public class ManageExpensePage {
 			PageFactory.initElements(driver, this);
 		}
 		
-		@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
-		@FindBy(xpath = "//select[@name='user_id']") WebElement userIdSelectField;
-		@FindBy(xpath = "//select[@name='ex_cat']") WebElement categorySelectField;
-		@FindBy(xpath = "//select[@name='order_id']") WebElement orderIdSelectField;
-		@FindBy(xpath = "//select[@name='purchase_id']") WebElement purchaseIdSelectField;
-		@FindBy(xpath = "//select[@name='ex_type']") WebElement expenseTypeSelectField;
-		@FindBy(xpath = "//input[@id='amount']") WebElement amountInputField;
-		@FindBy(xpath = "//textarea[@id='content']") WebElement remarksInputField;
-		@FindBy(xpath = "//input[@name='userfile']") WebElement chooseFileButton;
-		@FindBy(xpath = "//button[@type='submit']") WebElement saveButton;
-		@FindBy(xpath = "//div[@class='col-sm-12']//child::div") WebElement successfullAlertPopup;
+		@FindBy(xpath = "//a[@onclick='click_button(1)']") private WebElement newButton;
+		@FindBy(xpath = "//select[@name='user_id']") private WebElement userIdSelectField;
+		@FindBy(xpath = "//select[@name='ex_cat']") private WebElement categorySelectField;
+		@FindBy(xpath = "//select[@name='order_id']") private WebElement orderIdSelectField;
+		@FindBy(xpath = "//select[@name='purchase_id']") private WebElement purchaseIdSelectField;
+		@FindBy(xpath = "//select[@name='ex_type']") private WebElement expenseTypeSelectField;
+		@FindBy(xpath = "//input[@id='amount']") private WebElement amountInputField;
+		@FindBy(xpath = "//textarea[@id='content']") private WebElement remarksInputField;
+		@FindBy(xpath = "//input[@name='userfile']") private WebElement chooseFileButton;
+		@FindBy(xpath = "//button[@type='submit']") private WebElement saveButton;
+		@FindBy(xpath = "//div[@class='col-sm-12']//child::div") private WebElement successfullAlertPopup;
 		
 		
 		public void clickOnNewButton() {

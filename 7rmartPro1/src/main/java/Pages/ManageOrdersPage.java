@@ -17,16 +17,16 @@ public class ManageOrdersPage {
 		PageFactory.initElements(driver, this);
 	}	
 	
-	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//a[text()='Change Delivery Date']") WebElement changeDeliveryDateButton;
-	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//input[@id='basicExample']") WebElement startTimeInputField;
-	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//input[@id='basicExample1']") WebElement endTimeInputField;
-	@FindBy(xpath = "(//td[text()='145']/following-sibling::td[5]//button[@name='Update_st'])[2]") WebElement updateButtonForChangingDeliveryDate;
-	@FindBy(xpath = "//div[@class='col-sm-12']//child::div") WebElement successfulAlertMessageForChangingDeliveryDate;
+	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//a[text()='Change Delivery Date']") private WebElement changeDeliveryDateButton;
+	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//input[@id='basicExample']") private WebElement startTimeInputField;
+	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//input[@id='basicExample1']") private WebElement endTimeInputField;
+	@FindBy(xpath = "(//td[text()='145']/following-sibling::td[5]//button[@name='Update_st'])[2]") private WebElement updateButtonForChangingDeliveryDate;
+	@FindBy(xpath = "//div[@class='col-sm-12']//child::div") private WebElement successfulAlertMessageForChangingDeliveryDate;
 	
-	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//a[text()='Assign Delivery Boy']") WebElement assignDeliveryBoyButton;
-	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//select[@id='delivery_boy_id']") WebElement deliveryBoySelectField;
-	@FindBy(xpath = "(//td[text()='145']/following-sibling::td[5]//button[@type='submit'])[3]") WebElement updateButtonForAssigningDeliveryBoy;
-	@FindBy(xpath = "//div[@class='col-sm-12']//child::div") WebElement successfulAlertMessageForAssigningDeliveryBoy;
+	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//a[text()='Assign Delivery Boy']") private WebElement assignDeliveryBoyButton;
+	@FindBy(xpath = "//td[text()='145']/following-sibling::td[5]//select[@id='delivery_boy_id']") private WebElement deliveryBoySelectField;
+	@FindBy(xpath = "(//td[text()='145']/following-sibling::td[5]//button[@type='submit'])[3]") private WebElement updateButtonForAssigningDeliveryBoy;
+	@FindBy(xpath = "//div[@class='col-sm-12']//child::div") private WebElement successfulAlertMessageForAssigningDeliveryBoy;
 	
 	public void clickOnChangeDeliveryDateButton() {
 		PageUtilities pageutilities = new PageUtilities();

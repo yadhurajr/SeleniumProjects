@@ -21,22 +21,22 @@ public class ManageDeliveryBoyPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//a[@href='javascript:void(0)']") WebElement blueSearchButtonLink;
-	@FindBy(xpath = "//input[@id='un']") WebElement nameInputField;
-	@FindBy(xpath = "//input[@id='ph']") WebElement phoneNumberInputField;
-	@FindBy(xpath = "//input[@id='ut']") WebElement emailInputField;
-	@FindBy(xpath = "//button[@name='Search']") WebElement redSearchButtonLink;
-	@FindBy(xpath = "//tbody/tr[1]") WebElement secondRowOflistDeliveryBoyTable;
+	@FindBy(xpath = "//a[@href='javascript:void(0)']") private WebElement blueSearchButtonLink;
+	@FindBy(xpath = "//input[@id='un']") private WebElement nameInputField;
+	@FindBy(xpath = "//input[@id='ph']") private WebElement phoneNumberInputField;
+	@FindBy(xpath = "//input[@id='ut']") private WebElement emailInputField;
+	@FindBy(xpath = "//button[@name='Search']") private WebElement redSearchButtonLink;
+	@FindBy(xpath = "//tbody/tr[1]") private WebElement secondRowOflistDeliveryBoyTable;
 	
-	@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
-	@FindBy(xpath = "//input[@id='name']") WebElement nameInputField2;
-	@FindBy(xpath = "//input[@id='email']") WebElement emailInputField2;
-	@FindBy(xpath = "//input[@id='phone']") WebElement phoneNumberInputField2;
-	@FindBy(xpath = "//textarea[@id='address']") WebElement addressInputField2;
-	@FindBy(xpath = "//input[@id='username']") WebElement usernameInputField2;
-	@FindBy(xpath = "//input[@id='password']") WebElement passwordInputField2;
-	@FindBy(xpath = "//button[@type='submit']") WebElement saveButton;
-	@FindBy(xpath = "//tbody/tr[1]") WebElement secondRowOflistDeliveryBoyTableAfterAddingDeliveryBoyInstructions;
+	@FindBy(xpath = "//a[@onclick='click_button(1)']") private WebElement newButton;
+	@FindBy(xpath = "//input[@id='name']") private WebElement nameInputField2;
+	@FindBy(xpath = "//input[@id='email']") private WebElement emailInputField2;
+	@FindBy(xpath = "//input[@id='phone']") private WebElement phoneNumberInputField2;
+	@FindBy(xpath = "//textarea[@id='address']") private WebElement addressInputField2;
+	@FindBy(xpath = "//input[@id='username']") private WebElement usernameInputField2;
+	@FindBy(xpath = "//input[@id='password']") private WebElement passwordInputField2;
+	@FindBy(xpath = "//button[@type='submit']") private WebElement saveButton;
+	@FindBy(xpath = "//tbody/tr[1]") private WebElement secondRowOflistDeliveryBoyTableAfterAddingDeliveryBoyInstructions;
 	
 	public void clickOnBlueSearchButtonLink() {
 		blueSearchButtonLink.click();

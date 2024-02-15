@@ -24,23 +24,23 @@ public class ManageOfferCodePage {
 			PageFactory.initElements(driver, this);
 		}
 		
-		@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
-		@FindBy(xpath = "//input[@id='offer_code']") WebElement offerCodeInputField;
+		@FindBy(xpath = "//a[@onclick='click_button(1)']") private WebElement newButton;
+		@FindBy(xpath = "//input[@id='offer_code']") private WebElement offerCodeInputField;
 		
-		@FindBy(xpath = "//input[@value='yes']") WebElement firstOrderUserYesRadioButton;
-		@FindBy(xpath = "//input[@value='no']") WebElement firstOrderUserNoRadioButton;
+		@FindBy(xpath = "//input[@value='yes']") private WebElement firstOrderUserYesRadioButton;
+		@FindBy(xpath = "//input[@value='no']") private WebElement firstOrderUserNoRadioButton;
 		
-		@FindBy(xpath = "//input[@id='offer_per']") WebElement percentageInputField;
-		@FindBy(xpath = "//input[@id='offer_price']") WebElement amountInputField;
-		@FindBy(xpath = "//div[@role='textbox']") WebElement descriptionInputField;
-		@FindBy(xpath = "//input[@id='main_img']") WebElement chooseFileButton;
-		@FindBy(xpath = "//button[@type='submit']") WebElement saveButton;
-		@FindBy(xpath = "//div[@class='col-sm-12']") WebElement successfullAlertPopup;
+		@FindBy(xpath = "//input[@id='offer_per']") private WebElement percentageInputField;
+		@FindBy(xpath = "//input[@id='offer_price']") private WebElement amountInputField;
+		@FindBy(xpath = "//div[@role='textbox']") private WebElement descriptionInputField;
+		@FindBy(xpath = "//input[@id='main_img']") private WebElement chooseFileButton;
+		@FindBy(xpath = "//button[@type='submit']") private WebElement saveButton;
+		@FindBy(xpath = "//div[@class='col-sm-12']") private WebElement successfullAlertPopup;
 		
-		@FindBy(xpath = "//a[@onclick='click_button(2)']") WebElement blueSearchButton;
-		@FindBy(xpath = "//input[@placeholder='Offer Code']") WebElement offerCodeInputfieldToSearch;
-		@FindBy(xpath = "//button[@type='submit']") WebElement redSearchButton;
-		@FindBy(xpath = "//tbody/tr[1]") WebElement secondRowOfListOfferCodeTable;
+		@FindBy(xpath = "//a[@onclick='click_button(2)']") private WebElement blueSearchButton;
+		@FindBy(xpath = "//input[@placeholder='Offer Code']") private WebElement offerCodeInputfieldToSearch;
+		@FindBy(xpath = "//button[@type='submit']") private WebElement redSearchButton;
+		@FindBy(xpath = "//tbody/tr[1]") private WebElement secondRowOfListOfferCodeTable;
 		
 		public void clickOnNewButton() {
 			newButton.click();

@@ -18,11 +18,11 @@ public FileUploadUtility fileuploadutility;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/Slider/add']") WebElement newButton;
-	@FindBy(xpath = "//input[@type='file']") WebElement chooseFileButton;
-	@FindBy(xpath = "//input[@type='text']") WebElement linkTextField;
-	@FindBy(xpath = "//button[@type='submit']") WebElement saveButton;
-	@FindBy(xpath = "//div[@class='col-sm-12']") WebElement successfullAlertPopup;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/Slider/add']") private WebElement newButton;
+	@FindBy(xpath = "//input[@type='file']") private WebElement chooseFileButton;
+	@FindBy(xpath = "//input[@type='text']") private WebElement linkTextField;
+	@FindBy(xpath = "//button[@type='submit']") private WebElement saveButton;
+	@FindBy(xpath = "//div[@class='col-sm-12']") private WebElement successfullAlertPopup;
 	
 	public void clickOnNewButton() {
 		newButton.click();

@@ -17,13 +17,13 @@ public PageUtilities pageutilities;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
-	@FindBy(xpath = "//select[@id='country_id']") WebElement countrySelectField;
-	@FindBy(xpath = "//select[@id='st_id']") WebElement stateSelectField;
-	@FindBy(xpath = "//input[@id='location']") WebElement locationInputField;
-	@FindBy(xpath = "//input[@id='delivery']") WebElement deliveryChargeField;
-	@FindBy(xpath = "//button[@type='submit']") WebElement saveButton;
-	@FindBy(xpath = "//div[@class='col-sm-12']//child::div") WebElement locationCreatedSuccessfullyAlertPopup;
+	@FindBy(xpath = "//a[@onclick='click_button(1)']") private WebElement newButton;
+	@FindBy(xpath = "//select[@id='country_id']") private WebElement countrySelectField;
+	@FindBy(xpath = "//select[@id='st_id']") private WebElement stateSelectField;
+	@FindBy(xpath = "//input[@id='location']") private WebElement locationInputField;
+	@FindBy(xpath = "//input[@id='delivery']") private WebElement deliveryChargeField;
+	@FindBy(xpath = "//button[@type='submit']") private WebElement saveButton;
+	@FindBy(xpath = "//div[@class='col-sm-12']//child::div") private WebElement locationCreatedSuccessfullyAlertPopup;
 	
 	public void clickOnNewButton() {
 		newButton.click();

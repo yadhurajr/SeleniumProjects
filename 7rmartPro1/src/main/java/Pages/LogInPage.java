@@ -14,11 +14,11 @@ public WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//input[@placeholder='Username']") WebElement usernameInputField;
-	@FindBy(xpath = "//input[@placeholder='Password']") WebElement passwordInputField;
-	@FindBy(xpath = "//button[text()='Sign In']") WebElement signInButton;
-	@FindBy(xpath = "//a[@class='nav-link' and @data-toggle='dropdown']") WebElement adminDropdownButton;
-	@FindBy(xpath = "//button[@class='close']//parent::div") WebElement redAlertTextBox;
+	@FindBy(xpath = "//input[@placeholder='Username']") private WebElement usernameInputField;
+	@FindBy(xpath = "//input[@placeholder='Password']") private WebElement passwordInputField;
+	@FindBy(xpath = "//button[text()='Sign In']") private WebElement signInButton;
+	@FindBy(xpath = "//a[@class='nav-link' and @data-toggle='dropdown']") private WebElement adminDropdownButton;
+	@FindBy(xpath = "//button[@class='close']//parent::div") private WebElement redAlertTextBox;
 	
 	public void enterUsernameOnUsernameInputField(String username) {
 		usernameInputField.sendKeys(username);

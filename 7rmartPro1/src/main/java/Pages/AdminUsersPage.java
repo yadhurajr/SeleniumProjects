@@ -17,12 +17,12 @@ public class AdminUsersPage {
 			PageFactory.initElements(driver, this);
 		}
 		
-		@FindBy(xpath = "//a[@onclick='click_button(1)']") WebElement newButton;
-		@FindBy(xpath = "//input[@id='username']") WebElement usernameInputField;
-		@FindBy(xpath = "//input[@id='password']") WebElement passwordInputField;
-		@FindBy(xpath = "//select[@id='user_type']") WebElement userTypeSelectField;
-		@FindBy(xpath = "//button[@name='Create']") WebElement saveButton;
-		@FindBy(xpath = "//div[@class='row-sm-12']//child::div[@class='alert alert-success alert-dismissible']") WebElement userCreationSuccessfulAlert;
+		@FindBy(xpath = "//a[@onclick='click_button(1)']") private WebElement newButton;
+		@FindBy(xpath = "//input[@id='username']") private WebElement usernameInputField;
+		@FindBy(xpath = "//input[@id='password']") private WebElement passwordInputField;
+		@FindBy(xpath = "//select[@id='user_type']") private WebElement userTypeSelectField;
+		@FindBy(xpath = "//button[@name='Create']") private WebElement saveButton;
+		@FindBy(xpath = "//div[@class='row-sm-12']//child::div[@class='alert alert-success alert-dismissible']") private WebElement userCreationSuccessfulAlert;
 		
 		public void clickOnNewButton() {
 			newButton.click();

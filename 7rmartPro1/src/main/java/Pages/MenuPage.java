@@ -19,8 +19,8 @@ public PageUtilities pageutilities;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//div[contains(@class,'small')]//child::div[@class='inner']") List<WebElement> menuList;
-	@FindBy(xpath = "//a[@class='small-box-footer']") List<WebElement> menuLink;
+	@FindBy(xpath = "//div[contains(@class,'small')]//child::div[@class='inner']") private List<WebElement> menuList;
+	@FindBy(xpath = "//a[@class='small-box-footer']") private List<WebElement> menuLink;
 	
 	public void clickOnMenu(String selectedMenu) {
 		int menuIndex;

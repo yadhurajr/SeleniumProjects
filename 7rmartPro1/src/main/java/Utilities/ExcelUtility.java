@@ -24,6 +24,16 @@ public static String getStringData(int a, int b, String sheet) throws IOExceptio
 		Cell c = r.getCell(b);
 		return c.getStringCellValue();
 	}
+
+public static String getStringData(int a, int b, String sheet, String filepath) throws IOException {
+	
+	f= new FileInputStream(filepath);
+	wb = new XSSFWorkbook(f);
+	sh = wb.getSheet(sheet);
+	Row r = sh.getRow(a);
+	Cell c = r.getCell(b);
+	return c.getStringCellValue();
+}
 	
 public static String getIntegerData(int a, int b, String sheet) throws IOException {
 		
