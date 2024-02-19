@@ -7,22 +7,15 @@
 	<parameter name="browser" value="chrome"></parameter>
   <test thread-count="5" name="Test">
     <classes>
-	  <class name="TestScripts.ManageDeliveryBoyTest">
-			<methods>
-				<include name="verifyThatUserIsAbleToAddDeliveryBoyInformations"></include>
-				<include name="verifyThatUserIsAbleToGetTheDetailsOfDeliveryBoyBySearchingUsingNameEmailAndPhoneNo"></include>
-			</methods>
-	  </class>
-
-	  <class name="TestScripts.ManageOfferCodeTest">
-			<methods>
-				<include name="verifyThatUserIsAbleToAddOfferCodeInformationsInManageOfferCodeMoreInfoLinkAsFirstOrderUser"></include>
-				<include name="verifyThatUserIsAbleToSearchOfferCodeDetailsOfFirstOrderUserBySearchingtheOfferCode"></include>
-				<include name="verifyThatUserIsAbleToAddOfferCodeInManageOfferCodeMoreInfoLinkNotAsFirstOrderUser"></include>
-				<include name="verifyThatUserIsAbleToSearchOfferCodeDetailsOfNotAFirstOrderUserBySearchingtheOfferCode"></include>
-			</methods>
-	  </class>
-
+		
+		<class name="TestScripts.LogInTest"></class>
+		<class name="TestScripts.ManageDeliveryBoyTest"></class>
+		<class name="TestScripts.AdminUsersTest"></class>
+		<class name="TestScripts.ManageExpenseTest"></class>
+		<class name="TestScripts.ManageLocationsTest"></class>	
+		<class name="TestScripts.ManageOrdersTest"></class>
+		<class name="TestScripts.ManageSliderTest"></class>
+	  	
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
